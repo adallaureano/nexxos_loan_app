@@ -1,0 +1,4 @@
+<%= form_for([@requester, @requester.credit_requests.build]) do |f| %>
+ <%= f.text_field :value, placeholder: "New Credit Request" %>
+ <%= f.submit %>
+<% end %>
