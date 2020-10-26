@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @requester.company_name %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @requester.cnpj %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @requester.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @requester.phone %>
+</p>
+
+<div id="credit_requests_wrapper">
+ <%= render @requester.credit_requests %>
+ <div id="form">
+  <%= render "credit_requests/form" %>
+ </div>
+</div>
+
+<%= link_to 'Edit', edit_requester_path(@requester) %> |
+<%= link_to 'Back', requesters_path %>
