@@ -7,11 +7,11 @@ class CreditRequestsController < ApplicationController
     end
 
     def destroy
-        @credit_request = @requester.credit_request.find(params[:id])
-        if @credit_reques.destroy
+        @credit_request = @requester.credit_requests.find(params[:id])
+        if @credit_request.destroy
             flash[:success] = "Credit Request was deleted."
         else
-            flash[:erro] = "Credit Request could not be deleted"
+            flash[:error] = "Credit Request could not be deleted"
         end
         redirect_to @requester
     end
