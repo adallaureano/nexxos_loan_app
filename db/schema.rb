@@ -10,22 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_091035) do
+ActiveRecord::Schema.define(version: 2020_10_29_102524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "credit_requests", force: :cascade do |t|
-    t.money "value", scale: 2
+    t.decimal "value", precision: 10, scale: 2
     t.bigint "requester_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "monthly_value", precision: 10, scale: 2
+    t.decimal "total_value", precision: 10, scale: 2
     t.index ["requester_id"], name: "index_credit_requests_on_requester_id"
   end
 
   create_table "requesters", force: :cascade do |t|
     t.string "company_name"
-    t.integer "cnpj"
+    t.string "cnpj"
     t.string "address"
     t.string "phone"
     t.datetime "created_at", precision: 6, null: false
