@@ -2,6 +2,8 @@ class CreditRequest < ApplicationRecord
   belongs_to :requester
   before_save :interest_rate
 
+  validates_presence_of :value
+
   private 
   def interest_rate
     #rate = 0.15
