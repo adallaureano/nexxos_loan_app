@@ -1,2 +1,7 @@
-<p><%= credit_request.value %></p>
+<h2>Credit Request Information</h2>
+<p><strong>Value Requested : </strong>    <%= number_to_currency(credit_request.value, :unit => "R$") %></p>
+<p><strong>Total Value to Pay : </strong> <%= number_to_currency(credit_request.total_value, :unit => "R$") %></p>
+<p><strong>Monthly Payment : </strong>    <%= number_to_currency(credit_request.monthly_value, :unit => "R$") %></p>
+<p><strong>Duration in Months : </strong> 12 </p>
 <%= link_to "Delete", requester_credit_request_path(@requester, credit_request.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<br/>

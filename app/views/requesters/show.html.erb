@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Requester Information</h2>
 <p>
-  <strong>Company name:</strong>
+  <strong>Company Name:</strong>
   <%= @requester.company_name %>
 </p>
 
 <p>
-  <strong>Cnpj:</strong>
+  <strong>CNPJ:</strong>
   <%= @requester.cnpj %>
 </p>
 
@@ -20,9 +21,11 @@
   <%= @requester.phone %>
 </p>
 
+<br/>
 <div id="credit_requests_wrapper">
  <%= render @requester.credit_requests %>
  <div id="form">
+  <br/>
   <%= render "credit_requests/form" %>
  </div>
 </div>
